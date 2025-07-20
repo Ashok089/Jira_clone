@@ -19,9 +19,7 @@ jobs:
         with:
           node-version: '18'
 
-      ##########################
-      # Backend Install & Test
-      ##########################
+ 
       - name: 📦 Install backend dependencies
         run: npm install
         working-directory: backend
@@ -30,23 +28,20 @@ jobs:
         run: npm test || echo "No backend tests"
         working-directory: backend
 
-      ##########################
-      # Frontend Install & Build
-      ##########################
+
       - name: 📦 Install frontend dependencies
         run: npm install
-        working-directory: frontend
+        working-directory: frontend/Task-Manager
 
       - name: 🧪 Run frontend tests
         run: npm test || echo "No frontend tests"
-        working-directory: frontend
+        working-directory: frontend/Task-Manager
 
       - name: 🛠️ Build frontend
         run: npm run build
-        working-directory: frontend
+        working-directory: frontend/Task-Manager
 
-      ##########################
-      # ✅ Done
-      ##########################
+
+
       - name: ✅ Done
         run: echo "🎉 CI finished successfully!"
