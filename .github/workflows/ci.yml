@@ -32,7 +32,7 @@ jobs:
 
       - name: 🧪 Run backend tests
         working-directory: ./backend
-        run: npm test || echo "No backend tests yet"
+        run: npm test
 
       - name: 🚀 Backend start check
         working-directory: ./backend
@@ -43,15 +43,15 @@ jobs:
       # Frontend Install & Test
       ##########################
       - name: 📦 Install frontend dependencies
-        working-directory: "./frontend Task-Manager"
+        working-directory: ./frontend
         run: npm install
 
       - name: 🧪 Run frontend tests
-        working-directory: "./frontend Task-Manager"
-        run: npm test || echo "No frontend tests yet"
+        working-directory: ./frontend
+        run: npm test
 
       - name: 🛠️ Build frontend
-        working-directory: "./frontend Task-Manager"
+        working-directory: ./frontend
         run: npm run build
 
       ##########################
